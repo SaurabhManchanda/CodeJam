@@ -1,0 +1,56 @@
+//Question Link: https://www.hackerrank.com/challenges/2d-array/problem
+using System.CodeDom.Compiler;
+using System.Collections.Generic;
+using System.Collections;
+using System.ComponentModel;
+using System.Diagnostics.CodeAnalysis;
+using System.Globalization;
+using System.IO;
+using System.Linq;
+using System.Reflection;
+using System.Runtime.Serialization;
+using System.Text.RegularExpressions;
+using System.Text;
+using System;
+
+class Solution
+{
+    static int hourglassSum(int[][] Array)
+    {
+        int ISize = 3;
+        int ArraySize = 6;
+        int Sum = 0, MaximumValue = -63;
+        for (int ILoop = 0; ILoop < ArraySize - ISize + 1; ILoop++)
+        {
+            for (int JLoop = 0; JLoop < ArraySize - ISize + 1; JLoop++)
+            {
+                Sum = Array[ILoop][JLoop] + + Array[ILoop][JLoop + 1]+ Array[ILoop][JLoop + 2] + Array[ILoop + 1][JLoop + 1]+ Array[ILoop + 2][JLoop]+
+                      Array[ILoop + 2][JLoop+ 1]+ Array[ILoop + 2][JLoop + 2];
+                if (MaximumValue < Sum)
+                {
+                    MaximumValue = Sum;
+                }
+            }
+        }
+        return MaximumValue;
+    }
+    static void Main(string[] args)
+    {
+        TextWriter textWriter = new StreamWriter(@System.Environment.GetEnvironmentVariable("OUTPUT_PATH"), true);
+
+        int[][] arr = new int[6][];
+
+        for (int i = 0; i < 6; i++)
+        {
+            arr[i] = Array.ConvertAll(Console.ReadLine().Split(' '), arrTemp => Convert.ToInt32(arrTemp));
+        }
+
+        int result = hourglassSum(arr);
+
+        textWriter.WriteLine(result);
+
+        textWriter.Flush();
+        textWriter.Close();
+    }
+}
+//Code By Saurabh Manchanda 956
