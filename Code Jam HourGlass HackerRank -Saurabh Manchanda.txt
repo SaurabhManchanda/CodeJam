@@ -24,7 +24,7 @@ class Solution
         {
             for (int JLoop = 0; JLoop < ArraySize - ISize + 1; JLoop++)
             {
-                Sum = Array[ILoop][JLoop] + + Array[ILoop][JLoop + 1]+ Array[ILoop][JLoop + 2] + Array[ILoop + 1][JLoop + 1]+ Array[ILoop + 2][JLoop]+
+                Sum = Array[ILoop][JLoop] + Array[ILoop][JLoop + 1]+ Array[ILoop][JLoop + 2] + Array[ILoop + 1][JLoop + 1]+ Array[ILoop + 2][JLoop]+
                       Array[ILoop + 2][JLoop+ 1]+ Array[ILoop + 2][JLoop + 2];
                 if (MaximumValue < Sum)
                 {
