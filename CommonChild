@@ -26,5 +26,4 @@
                     }
                 }
             }
-            Console.WriteLine(Array[s1.Length, s1.Length]);
             return Array[s1.Length, s1.Length];
